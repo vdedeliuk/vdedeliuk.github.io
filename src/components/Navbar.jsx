@@ -7,8 +7,8 @@ export default function Navbar() {
   const [hasShadow, setHasShadow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  // Пряме посилання на ваше резюме
-  const resumeUrl = "https://kun.xxo.lol/y50pt6v9.pdf";
+ 
+  const resumeUrl = "https://kun.upload.lat/y50pt6v9.pdf";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +23,7 @@ export default function Navbar() {
     const section = document.getElementById(id);
     if (section) {
       window.scrollTo({
-        top: section.offsetTop - 110, // Налаштуйте зсув, якщо потрібно
+        top: section.offsetTop - 110, 
         behavior: "smooth",
       });
     }
@@ -66,14 +66,11 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Кнопка Resume для десктопної версії */}
         <motion.a
           href={resumeUrl}
-          // Атрибут download може не працювати для зовнішніх посилань так, як для локальних,
-          // але його можна залишити. Головне, що target="_blank" відкриє посилання.
           download="Volodymyr_Dedeliuk_CV.pdf"
           className="hidden relative lg:inline-block px-4 py-2 font-medium group"
-          target="_blank" // Відкриватиме PDF у новій вкладці
+          target="_blank" 
           rel="noopener noreferrer"
         >
           <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
@@ -122,7 +119,6 @@ export default function Navbar() {
                   </button>
                 </motion.li>
               ))}
-              {/* Кнопка Resume для мобільної версії */}
               <motion.a
                 href={resumeUrl}
                 download="Volodymyr_Dedeliuk_CV.pdf"
@@ -130,7 +126,7 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)} // Закривати меню при кліку
+                onClick={() => setIsOpen(false)}
               >
                 <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                 <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
