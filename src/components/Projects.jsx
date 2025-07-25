@@ -9,30 +9,29 @@ const projects = [
     id: 1,
     title: "Vaysed Shop",
     description: "A full-stack e-commerce web application built with Python and Django, featuring product catalogs, shopping cart functionality, Monobank payment integration, and Docker deployment readiness. Manages products, orders, and customers via Django Admin.",
-    image: "/assets/vaysed-shop.png", // Вам потрібно буде замінити це на реальне зображення
-    link: `https://github.com/kun3741/vaysedshop` // Приклад посилання, замініть на реальний URL репозиторію
-    // Якщо репозиторію немає: link: `https://github.com/${githubUsername}`
+    image: "/assets/vaysed-shop.png", 
+    link: `https://github.com/kun3741/vaysedshop` 
   },
   {
     id: 2,
     title: "Pizza Ordering Telegram Bot",
     description: "A Node.js Telegram bot facilitating online pizza orders, with SQLite for data management. Includes an interactive pizza builder, shopping cart, checkout process, and a callback request feature for customer support.",
-    image: "/assets/pizza-bot.png", // Вам потрібно буде замінити це на реальне зображення
-    link: `https://github.com/kun3741/vaysedpizza-tg` // Приклад посилання
+    image: "/assets/pizza-bot.png", 
+    link: `https://github.com/kun3741/vaysedpizza-tg` 
   },
   {
     id: 3,
     title: "Prudbay Clothes Support Bot",
     description: "A Telegram bot to automate customer support and order management for prudbaydelivery, featuring user registration, ticketing, order management, MongoDB & Airtable integration.",
-    image: "/assets/prudbay-bot.png", // Вам потрібно буде замінити це на реальне зображення
+    image: "/assets/prudbay-bot.png", 
     link: `https://t.me/prudbaysupport_bot`
   },
   {
     id: 4,
     title: "Nova Party Telegram Bot",
     description: "A comprehensive solution for event organizers that allows managing ticket sales directly within Telegram. The project was developed from scratch, including the backend, payment system integration logic, and administrative tools. The system enables users to easily browse events, purchase tickets via Monobank, and receive them as a QR code. For administrators, a panel has been implemented to create events, view revenue statistics, broadcast announcements, and validate tickets through a Telegram-integrated web app.",
-    image: "https://kun.xxo.lol/ao4ll2ho.png",
-    link: `https://t.me/novaparty_bot` // Приклад посилання, замініть, якщо потрібно
+    image: "https://kun.upload.lat/ao4ll2ho.png",
+    link: `https://t.me/novaparty_bot` 
   }
 ];
 
