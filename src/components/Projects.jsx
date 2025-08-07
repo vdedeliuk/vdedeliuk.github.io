@@ -30,8 +30,29 @@ const projects = [
     id: 4,
     title: "Nova Party Telegram Bot",
     description: "A comprehensive solution for event organizers that allows managing ticket sales directly within Telegram. The project was developed from scratch, including the backend, payment system integration logic, and administrative tools. The system enables users to easily browse events, purchase tickets via Monobank, and receive them as a QR code. For administrators, a panel has been implemented to create events, view revenue statistics, broadcast announcements, and validate tickets through a Telegram-integrated web app.",
-    image: "https://kun.upload.lat/ao4ll2ho.png",
+    image: "https://vaysed.tech/ao4ll2ho.png",
     link: `https://t.me/novaparty_bot` 
+  },
+  {
+    id: 5,
+    title: "Telegram Message Forwarder Bot",
+    description: "A Node.js Telegram bot for automatically forwarding messages from business accounts to specified chats. Features include message forwarding, edit tracking, delete notifications, support for all message types, MongoDB storage, and admin panel.",
+    image: "https://vaysed.tech/yprficve.png", 
+    link: `https://github.com/kun3741/msg-resender`
+  },
+  {
+    id: 6,
+    title: "Subscription Checker Bot",
+    description: "A Telegram bot with WebApp for checking user subscription to channels and providing exclusive content only to subscribers. Built with Node.js/Express, features subscription verification, WebApp interface, and secure content delivery.",
+    image: "https://vaysed.tech/2geycx3a.png", 
+    link: `https://github.com/kun3741/subscribe-checker`
+  },
+  {
+    id: 7,
+    title: "Market Parser",
+    description: "A web scraping and data parsing tool for market analysis. Extracts and processes market data for insights and analysis. Built with modern web technologies for efficient data collection and processing.",
+    image: "https://vaysed.tech/v8zcnpkr.png",
+    link: `https://github.com/kun3741/market-parser`
   }
 ];
 

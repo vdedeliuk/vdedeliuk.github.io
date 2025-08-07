@@ -7,8 +7,7 @@ export default function Navbar() {
   const [hasShadow, setHasShadow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
- 
-  const resumeUrl = "https://kun.upload.lat/y50pt6v9.pdf";
+  const resumeUrl = "https://vaysed.tech/ww032pya.pdf";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,9 +41,9 @@ export default function Navbar() {
         <motion.img
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          onClick={() => scrollToSection("home")} // Припускаючи, що у вас є секція з id="home"
+          onClick={() => scrollToSection("home")} 
           className="h-9 cursor-pointer"
-          src="/assets/logo.png" // Переконайтеся, що логотип існує за цим шляхом
+          src="/assets/logo.png" 
           alt="Logo"
         />
 
