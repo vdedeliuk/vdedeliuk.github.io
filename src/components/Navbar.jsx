@@ -48,7 +48,7 @@ export default function Navbar() {
         />
 
         <ul className="hidden lg:flex items-center gap-x-7 font-semibold">
-          {["about", "skills", "projects", "contact"].map((section) => (
+          {["about", "skills", "projects", "reviews", "contact"].map((section) => (
             <motion.li
               key={section}
               className="group"
@@ -107,7 +107,7 @@ export default function Navbar() {
               <HiX />
             </button>
             <ul className="flex flex-col items-center text-center h-full gap-y-8 font-semibold text-lg">
-              {["about", "skills", "projects", "contact"].map((section) => (
+              {["about", "skills", "projects", "reviews", "contact"].map((section) => (
                 <motion.li
                   key={section}
                   className="w-full"
