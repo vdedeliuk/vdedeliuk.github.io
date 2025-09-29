@@ -7,7 +7,7 @@ export default function Navbar() {
   const [hasShadow, setHasShadow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const resumeUrl = "https://vaysed.tech/ww032pya.pdf";
+  const resumeUrl = "https://kun.vaysed.tech/u0rlntee.pdf";
 
   useEffect(() => {
     const handleScroll = () => {
