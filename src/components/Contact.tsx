@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { Send, Mail, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,10 +9,11 @@ import { useToast } from "@/hooks/use-toast";
 
 export function Contact() {
   const { toast } = useToast();
+  const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
     message: "",
   });
 
@@ -19,15 +21,50 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const serviceID = "service_lrzhwyc";
+    const templateID = "template_elga7zo";
+    const publicKey = "7RFTyWwUrI_NWhWyK"; 
 
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
+    // Створюємо об'єкт з даними. Додаємо дублюючі ключі, щоб точно вгадати назви змінних у вашому шаблоні EmailJS
+    const templateParams = {
+      user_name: formData.user_name,
+      user_email: formData.user_email,
+      from_name: formData.user_name, // Часто використовується в шаблонах за замовчуванням
+      reply_to: formData.user_email, // Використовується для поля "Reply To"
+      name: formData.user_name,      // Простий варіант
+      email: formData.user_email,    // Простий варіант
+      message: formData.message,
+    };
 
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+    console.log("Attempting to send email with params:", templateParams);
+
+    try {
+      // Використовуємо .send() замість .sendForm() для надійності
+      const result = await emailjs.send(
+        serviceID,
+        templateID,
+        templateParams,
+        publicKey
+      );
+
+      console.log("SUCCESS!", result.status, result.text);
+
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+
+      setFormData({ user_name: "", user_email: "", message: "" });
+    } catch (error) {
+      console.error("FAILED...", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Check console for details.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -113,7 +150,7 @@ export function Contact() {
 
           {/* Right Column - Form */}
           <div className="brutal-card p-8 lg:p-10">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
@@ -123,8 +160,8 @@ export function Contact() {
                 </label>
                 <Input
                   id="name"
-                  name="name"
-                  value={formData.name}
+                  name="user_name"
+                  value={formData.user_name}
                   onChange={handleChange}
                   placeholder="John Doe"
                   required
@@ -141,9 +178,9 @@ export function Contact() {
                 </label>
                 <Input
                   id="email"
-                  name="email"
+                  name="user_email"
                   type="email"
-                  value={formData.email}
+                  value={formData.user_email}
                   onChange={handleChange}
                   placeholder="john@example.com"
                   required
