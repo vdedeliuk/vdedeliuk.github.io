@@ -4,11 +4,14 @@ import { Send, Mail, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { contactContent, siteConfig } from "@/data/content";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
 
 export function Contact() {
   const { toast } = useToast();
+  const t = useTranslation();
+  const { language } = useLanguage();
   const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -50,16 +53,16 @@ export function Contact() {
       console.log("SUCCESS!", result.status, result.text);
 
       toast({
-        title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
+        title: language === "uk" ? "Повідомлення надіслано!" : "Message sent!",
+        description: language === "uk" ? "Ми зв'яжемося з вами якнайшвидше." : "We'll get back to you as soon as possible.",
       });
 
       setFormData({ user_name: "", user_email: "", message: "" });
     } catch (error) {
       console.error("FAILED...", error);
       toast({
-        title: "Error",
-        description: "Failed to send message. Check console for details.",
+        title: language === "uk" ? "Помилка" : "Error",
+        description: language === "uk" ? "Не вдалося надіслати повідомлення. Перевірте консоль для деталей." : "Failed to send message. Check console for details.",
         variant: "destructive",
       });
     } finally {
@@ -87,52 +90,35 @@ export function Contact() {
             <div className="flex items-center gap-4 mb-6">
               <span className="w-12 h-px bg-foreground" />
               <span className="text-sm tracking-[0.3em] uppercase">
-                {contactContent.subtitle}
+                {t.contact.subtitle}
               </span>
             </div>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading leading-none mb-8">
-              {contactContent.title}
+              {t.contact.title}
             </h2>
             <p className="text-lg text-muted-foreground mb-12">
-              {contactContent.description}
+              {t.contact.description}
             </p>
 
             {/* Contact Info */}
             <div className="space-y-6">
               <a
-                href={`mailto:${siteConfig.email}`}
+                href={`mailto:${t.siteConfig.email}`}
                 className="flex items-center gap-4 group"
               >
                 <div className="w-14 h-14 border-2 border-foreground flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-colors">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wider">Email</div>
+                  <div className="text-sm text-muted-foreground uppercase tracking-wider">{t.contact.email}</div>
                   <div className="font-heading text-xl">
-                    {siteConfig.email}
+                    {t.siteConfig.email}
                   </div>
                 </div>
               </a>
 
-              {siteConfig.phone && (
-                <a
-                  href={`tel:${siteConfig.phone}`}
-                  className="flex items-center gap-4 group"
-                >
-                  <div className="w-14 h-14 border-2 border-foreground flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-colors">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground uppercase tracking-wider">Phone</div>
-                    <div className="font-heading text-xl">
-                      {siteConfig.phone}
-                    </div>
-                  </div>
-                </a>
-              )}
-
               <a
-                href={siteConfig.telegram}
+                href={t.siteConfig.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"
@@ -141,7 +127,7 @@ export function Contact() {
                   <MessageCircle className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wider">Telegram</div>
+                  <div className="text-sm text-muted-foreground uppercase tracking-wider">{t.contact.telegram}</div>
                   <div className="font-heading text-xl">@kun3741</div>
                 </div>
               </a>
@@ -156,14 +142,14 @@ export function Contact() {
                   htmlFor="name"
                   className="block text-sm font-heading tracking-wider uppercase mb-3"
                 >
-                  {contactContent.formFields.name}
+                  {t.contact.formFields.name}
                 </label>
                 <Input
                   id="name"
                   name="user_name"
                   value={formData.user_name}
                   onChange={handleChange}
-                  placeholder="John Doe"
+                  placeholder={t.contact.formFields.name}
                   required
                   className="bg-background border-2 border-foreground/20 focus:border-foreground h-14 px-4"
                 />
@@ -174,7 +160,7 @@ export function Contact() {
                   htmlFor="email"
                   className="block text-sm font-heading tracking-wider uppercase mb-3"
                 >
-                  {contactContent.formFields.email}
+                  {t.contact.formFields.email}
                 </label>
                 <Input
                   id="email"
@@ -182,7 +168,7 @@ export function Contact() {
                   type="email"
                   value={formData.user_email}
                   onChange={handleChange}
-                  placeholder="john@example.com"
+                  placeholder={t.contact.formFields.email}
                   required
                   className="bg-background border-2 border-foreground/20 focus:border-foreground h-14 px-4"
                 />
@@ -193,14 +179,14 @@ export function Contact() {
                   htmlFor="message"
                   className="block text-sm font-heading tracking-wider uppercase mb-3"
                 >
-                  {contactContent.formFields.message}
+                  {t.contact.formFields.message}
                 </label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tell us about your bot idea..."
+                  placeholder={t.contact.formFields.message}
                   rows={5}
                   required
                   className="bg-background border-2 border-foreground/20 focus:border-foreground resize-none p-4"
@@ -215,10 +201,10 @@ export function Contact() {
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
-                  "Sending..."
+                  t.contact.sending
                 ) : (
                   <>
-                    {contactContent.formFields.submit}
+                    {t.contact.formFields.submit}
                     <Send className="w-4 h-4 ml-2" />
                   </>
                 )}

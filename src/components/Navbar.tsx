@@ -1,20 +1,21 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/data/content";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
-];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const t = useTranslation();
+  const { language, setLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +24,14 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = [
+    { label: t.nav.about, href: "#about" },
+    { label: t.nav.services, href: "#services" },
+    { label: t.nav.portfolio, href: "#portfolio" },
+    { label: t.nav.testimonials, href: "#testimonials" },
+    { label: t.nav.contact, href: "#contact" },
+  ];
 
   return (
     <nav
@@ -40,7 +49,7 @@ export function Navbar() {
             href="#"
             className="text-2xl md:text-3xl font-heading tracking-tight"
           >
-            {siteConfig.name}
+            {t.siteConfig.name}
           </a>
 
           {/* Desktop Navigation */}
@@ -57,10 +66,36 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Language Switcher & CTA Button */}
+          <div className="hidden md:flex items-center gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="border-2 border-foreground/20 hover:border-foreground"
+                >
+                  <Globe className="h-4 w-4" />
+                  <span className="sr-only">Change language</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem
+                  onClick={() => setLanguage("en")}
+                  className={language === "en" ? "bg-accent" : ""}
+                >
+                  English
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => setLanguage("uk")}
+                  className={language === "uk" ? "bg-accent" : ""}
+                >
+                  Українська
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button variant="hero" size="default" asChild>
-              <a href="#contact">Start Project</a>
+              <a href="#contact">{t.nav.startProject}</a>
             </Button>
           </div>
 
@@ -76,7 +111,7 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-6 border-t border-foreground/10 animate-fade-in">
+          <div className="md:hidden py-6 border-t border-foreground/10 bg-background/95 backdrop-blur-sm animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
@@ -88,11 +123,39 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <Button variant="hero" size="default" className="mt-4" asChild>
-                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  Start Project
-                </a>
-              </Button>
+              <div className="flex items-center gap-4 mt-4">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="border-2 border-foreground/20 hover:border-foreground"
+                    >
+                      <Globe className="h-4 w-4" />
+                      <span className="sr-only">Change language</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem
+                      onClick={() => setLanguage("en")}
+                      className={language === "en" ? "bg-accent" : ""}
+                    >
+                      English
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => setLanguage("uk")}
+                      className={language === "uk" ? "bg-accent" : ""}
+                    >
+                      Українська
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <Button variant="hero" size="default" className="flex-1" asChild>
+                  <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                    {t.nav.startProject}
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         )}

@@ -1,5 +1,5 @@
 import { Zap, Shield, MessageSquare, Layers } from "lucide-react";
-import { aboutContent } from "@/data/content";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Zap,
@@ -9,6 +9,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export function About() {
+  const t = useTranslation();
+  
   return (
     <section id="about" className="section-padding relative noise-bg">
       {/* Large section number */}
@@ -23,20 +25,20 @@ export function About() {
             <div className="flex items-center gap-4 mb-6">
               <span className="w-12 h-px bg-foreground" />
               <span className="text-sm tracking-[0.3em] uppercase">
-                {aboutContent.subtitle}
+                {t.about.subtitle}
               </span>
             </div>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading leading-none mb-8">
-              {aboutContent.title}
+              {t.about.title}
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              {aboutContent.description}
+              {t.about.description}
             </p>
           </div>
 
           {/* Highlights Grid */}
           <div className="grid sm:grid-cols-2 gap-6">
-            {aboutContent.highlights.map((highlight, index) => {
+            {t.about.highlights.map((highlight, index) => {
               const Icon = iconMap[highlight.icon] || Zap;
               return (
                 <div

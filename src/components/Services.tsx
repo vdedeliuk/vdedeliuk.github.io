@@ -1,5 +1,5 @@
 import { Bot, CreditCard, Plug, BarChart3, Database, Wrench } from "lucide-react";
-import { servicesContent } from "@/data/content";
+import { useTranslation } from "@/hooks/useTranslation";
 import { Badge } from "@/components/ui/badge";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -12,6 +12,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export function Services() {
+  const t = useTranslation();
+  
   return (
     <section id="services" className="section-padding relative bg-foreground text-background noise-bg">
       {/* Large section number */}
@@ -25,17 +27,17 @@ export function Services() {
           <div className="flex items-center gap-4 mb-6">
             <span className="w-12 h-px bg-background" />
             <span className="text-sm tracking-[0.3em] uppercase text-background/60">
-              {servicesContent.subtitle}
+              {t.services.subtitle}
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading leading-none">
-            {servicesContent.title}
+            {t.services.title}
           </h2>
         </div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-background/20">
-          {servicesContent.services.map((service, index) => {
+          {t.services.services.map((service, index) => {
             const Icon = iconMap[service.icon] || Bot;
             return (
               <div

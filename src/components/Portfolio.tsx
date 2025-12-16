@@ -1,9 +1,11 @@
 import { ExternalLink } from "lucide-react";
-import { portfolioContent } from "@/data/content";
+import { useTranslation } from "@/hooks/useTranslation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export function Portfolio() {
+  const t = useTranslation();
+  
   return (
     <section id="portfolio" className="section-padding relative noise-bg">
       {/* Large section number */}
@@ -17,17 +19,17 @@ export function Portfolio() {
           <div className="flex items-center gap-4 mb-6">
             <span className="w-12 h-px bg-foreground" />
             <span className="text-sm tracking-[0.3em] uppercase">
-              {portfolioContent.subtitle}
+              {t.portfolio.subtitle}
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading leading-none">
-            {portfolioContent.title}
+            {t.portfolio.title}
           </h2>
         </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-6">
-          {portfolioContent.projects.map((project, index) => (
+          {t.portfolio.projects.map((project, index) => (
             <div
               key={project.id || project.title}
               className="brutal-card overflow-hidden group"
@@ -65,7 +67,7 @@ export function Portfolio() {
                         rel="noopener noreferrer"
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        View Project
+                        {t.portfolio.viewProject}
                       </a>
                     </Button>
                   )}

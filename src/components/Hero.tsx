@@ -1,9 +1,12 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { heroContent, siteConfig } from "@/data/content";
+import { useTranslation } from "@/hooks/useTranslation";
 import PlanetScene from "@/components/PlanetScene";
 
 export function Hero() {
+  const t = useTranslation();
+  const headlineWords = t.hero.headline.split(" ");
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden noise-bg">
       {/* 3D Planet Background */}
@@ -33,16 +36,16 @@ export function Hero() {
           <div className="inline-flex items-center gap-3 px-0 mb-8 opacity-0 animate-fade-up">
             <span className="w-12 h-px bg-foreground" />
             <span className="text-sm tracking-[0.3em] uppercase">
-              {heroContent.subheadline}
+              {t.hero.subheadline}
             </span>
           </div>
 
           {/* Headline */}
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-heading leading-[0.85] mb-8 opacity-0 animate-fade-up stagger-1">
-            {heroContent.headline.split(" ").slice(0, 2).join(" ")}
+            {headlineWords.slice(0, Math.ceil(headlineWords.length / 2)).join(" ")}
             <br />
             <span className="outline-text">
-              {heroContent.headline.split(" ").slice(2).join(" ")}
+              {headlineWords.slice(Math.ceil(headlineWords.length / 2)).join(" ")}
             </span>
           </h1>
 
@@ -50,7 +53,7 @@ export function Hero() {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div />
             <p className="text-lg text-muted-foreground leading-relaxed opacity-0 animate-fade-up stagger-2">
-              {heroContent.description}
+              {t.hero.description}
             </p>
           </div>
 
@@ -58,12 +61,12 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row items-start gap-4 opacity-0 animate-fade-up stagger-3">
             <Button variant="hero" size="xl" asChild>
               <a href="#contact" className="group">
-                {heroContent.ctaText}
+                {t.hero.ctaText}
                 <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <a href="#portfolio">{heroContent.ctaSecondary}</a>
+              <a href="#portfolio">{t.hero.ctaSecondary}</a>
             </Button>
           </div>
 
@@ -71,15 +74,15 @@ export function Hero() {
           <div className="flex flex-wrap gap-12 md:gap-20 mt-24 pt-12 border-t border-foreground/20 opacity-0 animate-fade-up stagger-4">
             <div>
               <div className="text-5xl md:text-6xl font-heading">50+</div>
-              <div className="text-sm text-muted-foreground mt-2 tracking-wider uppercase">Bots Delivered</div>
+              <div className="text-sm text-muted-foreground mt-2 tracking-wider uppercase">{t.stats.botsDelivered}</div>
             </div>
             <div>
               <div className="text-5xl md:text-6xl font-heading">5+</div>
-              <div className="text-sm text-muted-foreground mt-2 tracking-wider uppercase">Years Experience</div>
+              <div className="text-sm text-muted-foreground mt-2 tracking-wider uppercase">{t.stats.yearsExperience}</div>
             </div>
             <div>
               <div className="text-5xl md:text-6xl font-heading">100%</div>
-              <div className="text-sm text-muted-foreground mt-2 tracking-wider uppercase">Satisfaction</div>
+              <div className="text-sm text-muted-foreground mt-2 tracking-wider uppercase">{t.stats.satisfaction}</div>
             </div>
           </div>
         </div>
@@ -90,7 +93,7 @@ export function Hero() {
             href="#about"
             className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
-            <span className="text-xs uppercase tracking-[0.3em]">Scroll</span>
+            <span className="text-xs uppercase tracking-[0.3em]">{t.stats.scroll}</span>
             <ChevronDown className="animate-bounce" />
           </a>
         </div>

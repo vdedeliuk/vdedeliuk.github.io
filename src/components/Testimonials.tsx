@@ -1,7 +1,9 @@
 import { Quote } from "lucide-react";
-import { testimonialsContent } from "@/data/content";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export function Testimonials() {
+  const t = useTranslation();
+  
   return (
     <section id="testimonials" className="section-padding relative bg-foreground text-background noise-bg">
       {/* Large section number */}
@@ -15,17 +17,17 @@ export function Testimonials() {
           <div className="flex items-center gap-4 mb-6">
             <span className="w-12 h-px bg-background" />
             <span className="text-sm tracking-[0.3em] uppercase text-background/60">
-              {testimonialsContent.subtitle}
+              {t.testimonials.subtitle}
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading leading-none">
-            {testimonialsContent.title}
+            {t.testimonials.title}
           </h2>
         </div>
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {testimonialsContent.testimonials.map((testimonial, index) => (
+          {t.testimonials.testimonials.map((testimonial, index) => (
             <div
               key={testimonial.author}
               className="border-2 border-background p-8 relative group hover:bg-background hover:text-foreground transition-colors duration-300"
