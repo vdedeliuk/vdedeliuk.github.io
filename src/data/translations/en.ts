@@ -101,7 +101,18 @@ export const en = {
   portfolio: {
     title: "Portfolio",
     subtitle: "Projects We've Built",
+    featuredLabel: "Featured",
     projects: [
+      {
+        id: 0,
+        title: "RESTART 2026 | Telegram LMS Bot",
+        description:
+          "This project serves as a comprehensive Learning Management System built entirely within a Telegram bot interface. The solution automates the complete educational workflow, managing interactive content delivery, homework tracking, payment processing, and student retention via smart scheduling. By streamlining these administrative processes, the platform enables seamless scaling for the school and provides students with an accessible, always-on learning environment.",
+        image: "https://kun.vaysed.tech/abi66gbs.png",
+        technologies: ["Node.js", "Telegram API", "MongoDB", "Monobank"],
+        liveUrl: "https://t.me/yurieeva_bot",
+        featured: true,
+      },
       {
         id: 1,
         title: "Vaysed Shop",
