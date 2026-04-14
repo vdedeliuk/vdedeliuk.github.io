@@ -104,6 +104,15 @@ export const uk = {
     featuredLabel: "Рекомендовано",
     projects: [
       {
+        id: -1,
+        title: "Lumos | Бот моніторингу відключень світла",
+        description: "Lumos — це Telegram-бот, який автоматично відстежує графіки планових відключень електроенергії від українських провайдерів (зокрема для Івано-Франківської та Львівської областей). Бот дозволяє знайти свою чергу за адресою, підписатися на неї та отримувати миттєві сповіщення про зміну графіків. Також реалізована система розумних нагадувань перед вимкненням та увімкненням світла.",
+        image: "https://kun.vaysed.tech/mzofggk7.png",
+        technologies: ["Python", "MongoDB", "aiohttp"],
+        liveUrl: "https://lumos.foo/",
+        featured: true,
+      },
+      {
         id: 0,
         title: "RESTART 2026 | Telegram LMS Бот",
         description:
@@ -111,7 +120,6 @@ export const uk = {
         image: "https://kun.vaysed.tech/abi66gbs.png",
         technologies: ["Node.js", "Telegram API", "MongoDB", "Monobank"],
         liveUrl: "https://t.me/yurieeva_bot",
-        featured: true,
       },
       {
         id: 1,
@@ -148,15 +156,6 @@ export const uk = {
         image: "https://vaysed.tech/ao4ll2ho.png",
         technologies: ["Node.js", "Monobank", "Telegram Bot API", "Web App"],
         liveUrl: "https://t.me/novaparty_bot",
-      },
-      {
-        id: 5,
-        title: "Telegram Бот для Пересилання Повідомлень",
-        description:
-          "Telegram бот на Node.js для автоматичного пересилання повідомлень з бізнес-акаунтів у вказані чати. Функції включають пересилання повідомлень, відстеження редагувань, сповіщення про видалення, підтримку всіх типів повідомлень, зберігання MongoDB та адмін-панель.",
-        image: "https://vaysed.tech/yprficve.png",
-        technologies: ["Node.js", "MongoDB", "Telegram Bot API"],
-        liveUrl: "https://github.com/kun3741/msg-resender",
       },
       {
         id: 6,

@@ -104,6 +104,15 @@ export const en = {
     featuredLabel: "Featured",
     projects: [
       {
+        id: -1,
+        title: "Lumos | Power Outage Tracker Bot",
+        description: "Lumos is a Telegram bot that automatically monitors planned power outage schedules from Ukrainian energy providers (specifically for the Ivano-Frankivsk and Lviv regions). The bot allows users to automatically find their queue by entering their address, subscribe to updates, and receive real-time notifications about schedule changes. It also features a smart reminder system that alerts users before the power goes off or comes back on.",
+        image: "https://kun.vaysed.tech/mzofggk7.png",
+        technologies: ["Python", "MongoDB", "aiohttp"],
+        liveUrl: "https://lumos.foo/",
+        featured: true,
+      },
+      {
         id: 0,
         title: "RESTART 2026 | Telegram LMS Bot",
         description:
@@ -111,7 +120,6 @@ export const en = {
         image: "https://kun.vaysed.tech/abi66gbs.png",
         technologies: ["Node.js", "Telegram API", "MongoDB", "Monobank"],
         liveUrl: "https://t.me/yurieeva_bot",
-        featured: true,
       },
       {
         id: 1,
@@ -148,15 +156,6 @@ export const en = {
         image: "https://vaysed.tech/ao4ll2ho.png",
         technologies: ["Node.js", "Monobank", "Telegram Bot API", "Web App"],
         liveUrl: "https://t.me/novaparty_bot",
-      },
-      {
-        id: 5,
-        title: "Telegram Message Forwarder Bot",
-        description:
-          "A Node.js Telegram bot for automatically forwarding messages from business accounts to specified chats. Features include message forwarding, edit tracking, delete notifications, support for all message types, MongoDB storage, and admin panel.",
-        image: "https://vaysed.tech/yprficve.png",
-        technologies: ["Node.js", "MongoDB", "Telegram Bot API"],
-        liveUrl: "https://github.com/kun3741/msg-resender",
       },
       {
         id: 6,
