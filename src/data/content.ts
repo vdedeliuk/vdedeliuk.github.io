@@ -100,11 +100,11 @@ export const portfolioContent = {
   projects: [
     {
       id: -1,
-      title: "Lumos | Power Outage Tracker Bot",
-      description: "Lumos is a Telegram bot that automatically monitors planned power outage schedules from Ukrainian energy providers (specifically for the Ivano-Frankivsk and Lviv regions). The bot allows users to automatically find their queue by entering their address, subscribe to updates, and receive real-time notifications about schedule changes. It also features a smart reminder system that alerts users before the power goes off or comes back on.",
-      image: "https://kun.vaysed.tech/mzofggk7.png",
-      technologies: ["Python", "MongoDB", "aiohttp"],
-      liveUrl: "https://lumos.foo/",
+      title: "WorkersTon | Passive Mining",
+      description: "Buy virtual workers with TON, earn passive daily rewards for 60‑day contracts, and withdraw - mobile-first Telegram Mini App with TON wallet integration and 10% referral rewards.",
+      image: "https://kun.vaysed.tech/kykl33gl.png",
+      technologies: ["Node.js", "Telegram API", "Telegram Mini App", "TON", "Web3"],
+      liveUrl: "https://t.me/WorkersTon_Bot",
       featured: true,
     },
     {
@@ -115,6 +115,7 @@ export const portfolioContent = {
       image: "https://kun.vaysed.tech/abi66gbs.png",
       technologies: ["Node.js", "Telegram API", "MongoDB", "Monobank"],
       liveUrl: "https://t.me/yurieeva_bot",
+      featured: true,
     },
     {
       id: 1,
@@ -124,9 +125,18 @@ export const portfolioContent = {
       image: "https://kun.vaysed.tech/u614anq1.png",
       technologies: ["Python", "Django", "Monobank", "Docker"],
       liveUrl: "https://github.com/kun3741/vaysedshop",
+      featured: true,
     },
     {
       id: 2,
+      title: "Lumos | Power Outage Tracker Bot",
+      description: "Lumos is a Telegram bot that automatically monitors planned power outage schedules from Ukrainian energy providers (specifically for the Ivano-Frankivsk and Lviv regions). The bot allows users to automatically find their queue by entering their address, subscribe to updates, and receive real-time notifications about schedule changes. It also features a smart reminder system that alerts users before the power goes off or comes back on.",
+      image: "https://kun.vaysed.tech/mzofggk7.png",
+      technologies: ["Python", "MongoDB", "aiohttp"],
+      liveUrl: "https://lumos.foo/",
+    },
+    {
+      id: 3,
       title: "Pizza Ordering Telegram Bot",
       description:
         "A Node.js Telegram bot facilitating online pizza orders, with SQLite for data management. Includes an interactive pizza builder, shopping cart, checkout process, and a callback request feature for customer support.",
@@ -135,7 +145,7 @@ export const portfolioContent = {
       liveUrl: "https://github.com/kun3741/vaysedpizza-tg",
     },
     {
-      id: 3,
+      id: 4,
       title: "Prudbay Clothes Support Bot",
       description:
         "A Telegram bot to automate customer support and order management for prudbaydelivery, featuring user registration, ticketing, order management, MongoDB & Airtable integration.",
@@ -144,22 +154,13 @@ export const portfolioContent = {
       liveUrl: "https://t.me/prudbaysupport_bot",
     },
     {
-      id: 4,
+      id: 5,
       title: "Nova Party Telegram Bot",
       description:
         "A comprehensive solution for event organizers that allows managing ticket sales directly within Telegram. The project was developed from scratch, including the backend, payment system integration logic, and administrative tools. The system enables users to easily browse events, purchase tickets via Monobank, and receive them as a QR code. For administrators, a panel has been implemented to create events, view revenue statistics, broadcast announcements, and validate tickets through a Telegram-integrated web app.",
       image: "https://vaysed.tech/ao4ll2ho.png",
       technologies: ["Node.js", "Monobank", "Telegram Bot API", "Web App"],
       liveUrl: "https://t.me/novaparty_bot",
-    },
-    {
-      id: 6,
-      title: "Subscription Checker Bot",
-      description:
-        "A Telegram bot with WebApp for checking user subscription to channels and providing exclusive content only to subscribers. Built with Node.js/Express, features subscription verification, WebApp interface, and secure content delivery.",
-      image: "https://vaysed.tech/2geycx3a.png",
-      technologies: ["Node.js", "Express", "Telegram Bot API", "WebApp"],
-      liveUrl: "https://github.com/kun3741/subscribe-checker",
     },
   ],
 };

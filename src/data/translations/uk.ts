@@ -104,12 +104,12 @@ export const uk = {
     featuredLabel: "Рекомендовано",
     projects: [
       {
-        id: -1,
-        title: "Lumos | Бот моніторингу відключень світла",
-        description: "Lumos — це Telegram-бот, який автоматично відстежує графіки планових відключень електроенергії від українських провайдерів (зокрема для Івано-Франківської та Львівської областей). Бот дозволяє знайти свою чергу за адресою, підписатися на неї та отримувати миттєві сповіщення про зміну графіків. Також реалізована система розумних нагадувань перед вимкненням та увімкненням світла.",
-        image: "https://kun.vaysed.tech/mzofggk7.png",
-        technologies: ["Python", "MongoDB", "aiohttp"],
-        liveUrl: "https://lumos.foo/",
+        id: -2,
+        title: "WorkersTon | Пасивний майнинг",
+        description: "Купуй віртуальних воркерів за TON, отримуй пасивний щоденний дохід і виводь зароблене - мобільна Telegram Mini App з TON‑гаманцями, реферальною системою та кіберпанк UI.",
+        image: "https://kun.vaysed.tech/kykl33gl.png",
+        technologies: ["Node.js", "Telegram API", "Telegram Mini App", "TON", "Web3"],
+        liveUrl: "https://t.me/WorkersTon_Bot",
         featured: true,
       },
       {
@@ -132,6 +132,14 @@ export const uk = {
       },
       {
         id: 2,
+        title: "Lumos | Бот моніторингу відключень світла",
+        description: "Lumos — це Telegram-бот, який автоматично відстежує графіки планових відключень електроенергії від українських провайдерів (зокрема для Івано-Франківської та Львівської областей). Бот дозволяє знайти свою чергу за адресою, підписатися на неї та отримувати миттєві сповіщення про зміну графіків. Також реалізована система розумних нагадувань перед вимкненням та увімкненням світла.",
+        image: "https://kun.vaysed.tech/mzofggk7.png",
+        technologies: ["Python", "MongoDB", "aiohttp"],
+        liveUrl: "https://lumos.foo/",
+      },
+      {
+        id: 3,
         title: "Telegram Бот для Замовлення Піци",
         description:
           "Telegram бот на Node.js для онлайн-замовлення піци, з SQLite для управління даними. Включає інтерактивний конструктор піци, кошик, процес оформлення замовлення та функцію зворотного дзвінка для підтримки клієнтів.",
@@ -140,7 +148,7 @@ export const uk = {
         liveUrl: "https://github.com/kun3741/vaysedpizza-tg",
       },
       {
-        id: 3,
+        id: 4,
         title: "Бот Підтримки Prudbay Clothes",
         description:
           "Telegram бот для автоматизації підтримки клієнтів та управління замовленнями для prudbaydelivery, з реєстрацією користувачів, системою тікетів, управлінням замовленнями, інтеграцією MongoDB та Airtable.",
@@ -149,22 +157,13 @@ export const uk = {
         liveUrl: "https://t.me/prudbaysupport_bot",
       },
       {
-        id: 4,
+        id: 5,
         title: "Telegram Бот Nova Party",
         description:
           "Комплексне рішення для організаторів подій, яке дозволяє керувати продажем квитків безпосередньо в Telegram. Проєкт розроблено з нуля, включаючи бекенд, логіку інтеграції платіжної системи та адміністративні інструменти. Система дозволяє користувачам легко переглядати події, купувати квитки через Monobank та отримувати їх у вигляді QR-коду. Для адміністраторів реалізовано панель для створення подій, перегляду статистики доходів, трансляції оголошень та валідації квитків через веб-додаток, інтегрований з Telegram.",
         image: "https://vaysed.tech/ao4ll2ho.png",
         technologies: ["Node.js", "Monobank", "Telegram Bot API", "Web App"],
         liveUrl: "https://t.me/novaparty_bot",
-      },
-      {
-        id: 6,
-        title: "Бот Перевірки Підписки",
-        description:
-          "Telegram бот з WebApp для перевірки підписки користувачів на канали та надання ексклюзивного контенту лише підписникам. Побудований на Node.js/Express, має функції перевірки підписки, інтерфейс WebApp та безпечну доставку контенту.",
-        image: "https://vaysed.tech/2geycx3a.png",
-        technologies: ["Node.js", "Express", "Telegram Bot API", "WebApp"],
-        liveUrl: "https://github.com/kun3741/subscribe-checker",
       },
     ],
     viewProject: "Переглянути Проєкт",
