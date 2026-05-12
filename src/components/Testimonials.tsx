@@ -1,92 +1,114 @@
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
+import { BlurFade } from "@/components/animations/blur-fade";
+import { StaggerFade, StaggerItem } from "@/components/animations/stagger-fade";
+import { motion } from "framer-motion";
 
 export function Testimonials() {
   const t = useTranslation();
-  
+
   return (
-    <section id="testimonials" className="section-padding relative bg-foreground text-background noise-bg">
-      {/* Large section number */}
-      <div className="absolute top-20 left-8 md:left-20 pointer-events-none">
-        <span className="text-[8rem] md:text-[12rem] font-heading text-background/5 leading-none">04</span>
-      </div>
+    <section id="testimonials" className="section-padding relative noise-overlay overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
+      <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[128px] -translate-y-1/2" />
 
       <div className="container-custom relative">
         {/* Header */}
-        <div className="max-w-2xl mb-16">
-          <div className="flex items-center gap-4 mb-6">
-            <span className="w-12 h-px bg-background" />
-            <span className="text-sm tracking-[0.3em] uppercase text-background/60">
-              {t.testimonials.subtitle}
-            </span>
-          </div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading leading-none">
-            {t.testimonials.title}
-          </h2>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <BlurFade delay={0.1} inView>
+            <div className="inline-flex items-center gap-4 mb-6">
+              <span className="w-12 h-px bg-primary" />
+              <span className="text-sm tracking-[0.3em] uppercase text-primary">
+                {t.testimonials.subtitle}
+              </span>
+              <span className="w-12 h-px bg-primary" />
+            </div>
+          </BlurFade>
+
+          <BlurFade delay={0.2} inView>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading leading-none">
+              Client{" "}
+              <span className="text-gradient">{t.testimonials.title}</span>
+            </h2>
+          </BlurFade>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <StaggerFade
+          className="grid md:grid-cols-3 gap-6"
+          delay={0.2}
+          staggerDelay={0.1}
+        >
           {t.testimonials.testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.author}
-              className="border-2 border-background p-8 relative group hover:bg-background hover:text-foreground transition-colors duration-300"
-            >
-              {/* Quote Icon */}
-              <div className="mb-6">
-                <Quote className="w-10 h-10 text-background/30 group-hover:text-foreground/30 transition-colors" />
-              </div>
+            <StaggerItem key={testimonial.author}>
+              <motion.div
+                whileHover={{ y: -8 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                className="glass-card gradient-border p-8 h-full group relative"
+              >
+                {/* Quote Icon */}
+                <div className="absolute top-6 right-6">
+                  <Quote className="w-8 h-8 text-primary/20 group-hover:text-primary/40 transition-colors" />
+                </div>
 
-              {/* Quote Text */}
-              <p className="text-lg leading-relaxed mb-8">
-                "{testimonial.quote}"
-              </p>
+                {/* Stars */}
+                <div className="flex gap-1 mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  ))}
+                </div>
 
-              {/* Author */}
-              <div className="flex items-center gap-4">
-                {testimonial.avatar ? (
-                  <div className="w-14 h-14 border-2 border-background group-hover:border-foreground overflow-hidden transition-colors">
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.author}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        // Fallback to initial if image fails
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = "none";
-                        const parent = target.parentElement;
-                        if (parent) {
-                          parent.innerHTML = `<span class="text-2xl font-heading flex items-center justify-center w-full h-full">${testimonial.author.charAt(0)}</span>`;
-                        }
-                      }}
-                    />
-                  </div>
-                ) : (
-                  <div className="w-14 h-14 border-2 border-background group-hover:border-foreground flex items-center justify-center transition-colors">
-                    <span className="text-2xl font-heading">
-                      {testimonial.author.charAt(0)}
-                    </span>
-                  </div>
-                )}
-                <div>
-                  <div className="font-heading text-lg">
-                    {testimonial.author}
-                  </div>
-                  <div className="text-sm text-background/60 group-hover:text-foreground/60 transition-colors">
-                    {testimonial.role}
+                {/* Quote Text */}
+                <p className="text-muted-foreground leading-relaxed mb-8 relative z-10">
+                  &quot;{testimonial.quote}&quot;
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-4 mt-auto">
+                  {testimonial.avatar ? (
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/30 group-hover:border-primary transition-colors">
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.author}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = "none";
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.innerHTML = `<span class="text-xl font-heading flex items-center justify-center w-full h-full bg-primary/10 text-primary">${testimonial.author.charAt(0)}</span>`;
+                          }
+                        }}
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 rounded-full border-2 border-primary/30 bg-primary/10 flex items-center justify-center group-hover:border-primary transition-colors">
+                      <span className="text-xl font-heading text-primary">
+                        {testimonial.author.charAt(0)}
+                      </span>
+                    </div>
+                  )}
+                  <div>
+                    <div className="font-heading text-lg text-foreground group-hover:text-primary transition-colors">
+                      {testimonial.author}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {testimonial.role}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Number */}
-              <div className="absolute top-6 right-8">
-                <span className="text-4xl font-heading text-background/20 group-hover:text-foreground/20 transition-colors">
-                  0{index + 1}
-                </span>
-              </div>
-            </div>
+                {/* Number */}
+                <div className="absolute bottom-6 right-6 opacity-20 group-hover:opacity-40 transition-opacity">
+                  <span className="text-6xl font-heading text-primary">
+                    0{index + 1}
+                  </span>
+                </div>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerFade>
       </div>
     </section>
   );
