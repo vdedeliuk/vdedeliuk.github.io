@@ -107,7 +107,7 @@ export const uk = {
         id: -2,
         title: "WorkersTon | Пасивний майнинг",
         description: "Купуй віртуальних воркерів за TON, отримуй пасивний щоденний дохід і виводь зароблене - мобільна Telegram Mini App з TON‑гаманцями, реферальною системою та кіберпанк UI.",
-        image: "https://kun.vaysed.tech/kykl33gl.png",
+        image: "https://kun.vaysed.tech/ye1l6how.jpg",
         technologies: ["Node.js", "Telegram API", "Telegram Mini App", "TON", "Web3"],
         liveUrl: "https://t.me/WorkersTon_Bot",
         featured: true,
