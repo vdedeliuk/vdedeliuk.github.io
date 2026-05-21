@@ -107,7 +107,7 @@ export const en = {
         id: -2,
         title: "WorkersTon | Passive Mining",
         description: "Buy virtual workers with TON, earn passive daily rewards for 60‑day contracts, and withdraw - mobile-first Telegram Mini App with TON wallet integration and 10% referral rewards.",
-        image: "https://kun.vaysed.tech/kykl33gl.png",
+        image: "https://kun.vaysed.tech/ye1l6how.jpg",
         technologies: ["Node.js", "Telegram API", "Telegram Mini App", "TON", "Web3"],
         liveUrl: "https://t.me/WorkersTon_Bot",
         featured: true,
