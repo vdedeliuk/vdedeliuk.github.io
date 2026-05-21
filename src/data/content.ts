@@ -4,7 +4,7 @@ export const siteConfig = {
   email: "vaysed.dev@gmail.com",
   telegram: "https://t.me/kun3741",
   github: "https://github.com/kun3741",
-  // linkedin: "https://linkedin.com/,
+  linkedin: "https://www.linkedin.com/company/vaysed",
 };
 
 export const heroContent = {
@@ -102,7 +102,7 @@ export const portfolioContent = {
       id: -1,
       title: "WorkersTon | Passive Mining",
       description: "Buy virtual workers with TON, earn passive daily rewards for 60‑day contracts, and withdraw - mobile-first Telegram Mini App with TON wallet integration and 10% referral rewards.",
-      image: "https://kun.vaysed.tech/kykl33gl.png",
+      image: "https://kun.vaysed.tech/ye1l6how.jpg",
       technologies: ["Node.js", "Telegram API", "Telegram Mini App", "TON", "Web3"],
       liveUrl: "https://t.me/WorkersTon_Bot",
       featured: true,
