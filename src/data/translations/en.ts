@@ -104,6 +104,15 @@ export const en = {
     featuredLabel: "Featured",
     projects: [
       {
+        id: -1,
+        title: "PAYBACK CARTEL | Telegram Membership & CRM Automator",
+        description:
+          "PAYBACK CARTEL is a fully automated system for selling online courses and managing premium access to private Telegram channels. The bot registers users, accepts cryptocurrency payments via NOWPayments, automatically generates individual invite links, monitors subscription periods, and manages access control (including a dynamic notification system, a 5-day grace period, and automated removal of expired accounts). All client data is synchronized with an Airtable CRM in real-time.",
+        image: "https://kun.vaysed.tech/vojecyqr.png",
+        technologies: ["Node.js", "Telegram API", "NOWPayments", "Airtable", "Crypto"],
+        featured: true,
+      },
+      {
         id: -2,
         title: "WorkersTon | Passive Mining",
         description: "Buy virtual workers with TON, earn passive daily rewards for 60‑day contracts, and withdraw - mobile-first Telegram Mini App with TON wallet integration and 10% referral rewards.",

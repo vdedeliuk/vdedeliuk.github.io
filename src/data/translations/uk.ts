@@ -104,6 +104,15 @@ export const uk = {
     featuredLabel: "Рекомендовано",
     projects: [
       {
+        id: -1,
+        title: "PAYBACK CARTEL | Telegram Membership & CRM Automator",
+        description:
+          "Повністю автоматизована система для продажу онлайн-курсів та управління платним доступом до закритих Telegram-каналів. Бот реєструє користувачів, приймає оплату в криптовалюті через NOWPayments, автоматично видає індивідуальні посилання для вступу, відстежує термін дії підписки та керує доступом (включаючи гнучку систему нагадувань, grace period та автоматичний кік неактивних учасників). Усі дані синхронізуються з CRM на базі Airtable в реальному часі.",
+        image: "https://kun.vaysed.tech/vojecyqr.png",
+        technologies: ["Node.js", "Telegram API", "NOWPayments", "Airtable", "Crypto"],
+        featured: true,
+      },
+      {
         id: -2,
         title: "WorkersTon | Пасивний майнинг",
         description: "Купуй віртуальних воркерів за TON, отримуй пасивний щоденний дохід і виводь зароблене - мобільна Telegram Mini App з TON‑гаманцями, реферальною системою та кіберпанк UI.",
