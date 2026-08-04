@@ -103,7 +103,7 @@ export const portfolioContent = {
       title: "PAYBACK CARTEL | Telegram Membership & CRM Automator",
       description:
         "PAYBACK CARTEL is a fully automated system for selling online courses and managing premium access to private Telegram channels. The bot registers users, accepts cryptocurrency payments via NOWPayments, automatically generates individual invite links, monitors subscription periods, and manages access control (including a dynamic notification system, a 5-day grace period, and automated removal of expired accounts). All client data is synchronized with an Airtable CRM in real-time.",
-      image: "https://kun.vaysed.tech/vojecyqr.png",
+      image: "https://kun.screenshot.host/vojecyqr.png",
       technologies: ["Node.js", "Telegram API", "NOWPayments", "Airtable", "Crypto"],
       featured: true,
     },
@@ -111,7 +111,7 @@ export const portfolioContent = {
       id: -2,
       title: "WorkersTon | Passive Mining",
       description: "Buy virtual workers with TON, earn passive daily rewards for 60‑day contracts, and withdraw - mobile-first Telegram Mini App with TON wallet integration and 10% referral rewards.",
-      image: "https://kun.vaysed.tech/ye1l6how.jpg",
+      image: "https://kun.screenshot.host/ye1l6how.jpg",
       technologies: ["Node.js", "Telegram API", "Telegram Mini App", "TON", "Web3"],
       liveUrl: "https://t.me/WorkersTon_Bot",
       featured: true,
@@ -121,7 +121,7 @@ export const portfolioContent = {
       title: "RESTART 2026 | Telegram LMS Bot",
       description:
         "This project serves as a comprehensive Learning Management System built entirely within a Telegram bot interface. The solution automates the complete educational workflow, managing interactive content delivery, homework tracking, payment processing, and student retention via smart scheduling. By streamlining these administrative processes, the platform enables seamless scaling for the school and provides students with an accessible, always-on learning environment.",
-      image: "https://kun.vaysed.tech/abi66gbs.png",
+      image: "https://kun.screenshot.host/abi66gbs.png",
       technologies: ["Node.js", "Telegram API", "MongoDB", "Monobank"],
       liveUrl: "https://t.me/yurieeva_bot",
       featured: true,
@@ -131,7 +131,7 @@ export const portfolioContent = {
       title: "Vaysed Shop",
       description:
         "A full-stack e-commerce web application built with Python and Django, featuring product catalogs, shopping cart functionality, Monobank payment integration, and Docker deployment readiness. Manages products, orders, and customers via Django Admin.",
-      image: "https://kun.vaysed.tech/u614anq1.png",
+      image: "https://kun.screenshot.host/u614anq1.png",
       technologies: ["Python", "Django", "Monobank", "Docker"],
       liveUrl: "https://github.com/kun3741/vaysedshop",
       featured: true,
@@ -140,7 +140,7 @@ export const portfolioContent = {
       id: 2,
       title: "Lumos | Power Outage Tracker Bot",
       description: "Lumos is a Telegram bot that automatically monitors planned power outage schedules from Ukrainian energy providers (specifically for the Ivano-Frankivsk and Lviv regions). The bot allows users to automatically find their queue by entering their address, subscribe to updates, and receive real-time notifications about schedule changes. It also features a smart reminder system that alerts users before the power goes off or comes back on.",
-      image: "https://kun.vaysed.tech/mzofggk7.png",
+      image: "https://kun.screenshot.host/mzofggk7.png",
       technologies: ["Python", "MongoDB", "aiohttp"],
       liveUrl: "https://lumos.foo/",
     },
@@ -149,7 +149,7 @@ export const portfolioContent = {
       title: "Pizza Ordering Telegram Bot",
       description:
         "A Node.js Telegram bot facilitating online pizza orders, with SQLite for data management. Includes an interactive pizza builder, shopping cart, checkout process, and a callback request feature for customer support.",
-      image: "https://kun.vaysed.tech/kjbeqeiy.png",
+      image: "https://kun.screenshot.host/kjbeqeiy.png",
       technologies: ["Node.js", "Telegram Bot API", "SQLite"],
       liveUrl: "https://github.com/kun3741/vaysedpizza-tg",
     },
@@ -158,7 +158,7 @@ export const portfolioContent = {
       title: "Prudbay Clothes Support Bot",
       description:
         "A Telegram bot to automate customer support and order management for prudbaydelivery, featuring user registration, ticketing, order management, MongoDB & Airtable integration.",
-      image: "https://kun.vaysed.tech/q9cgsf7q.png",
+      image: "https://kun.screenshot.host/q9cgsf7q.png",
       technologies: ["Node.js", "MongoDB", "Airtable", "Telegram Bot API"],
       liveUrl: "https://t.me/prudbaysupport_bot",
     },
@@ -167,11 +167,11 @@ export const portfolioContent = {
       title: "Nova Party Telegram Bot",
       description:
         "A comprehensive solution for event organizers that allows managing ticket sales directly within Telegram. The project was developed from scratch, including the backend, payment system integration logic, and administrative tools. The system enables users to easily browse events, purchase tickets via Monobank, and receive them as a QR code. For administrators, a panel has been implemented to create events, view revenue statistics, broadcast announcements, and validate tickets through a Telegram-integrated web app.",
-      image: "https://vaysed.tech/ao4ll2ho.png",
+      image: "https://kun.screenshot.host/ao4ll2ho.png",
       technologies: ["Node.js", "Monobank", "Telegram Bot API", "Web App"],
       liveUrl: "https://t.me/novaparty_bot",
     },
-  ],
+    ],
 };
 
 export const testimonialsContent = {
@@ -183,21 +183,21 @@ export const testimonialsContent = {
         "Vaysed delivered a complete web application in record time. Their technical expertise and attention to detail resulted in a fast, clean, and high-quality solution. We highly recommend their services.",
       author: "Hippa",
       role: "Digital Solutions Company",
-      avatar: "https://kun.vaysed.tech/3yy5ewa7.png",
+      avatar: "https://kun.screenshot.host/3yy5ewa7.png",
     },
     {
       quote:
         "Vaysed demonstrated exceptional expertise and delivered exactly what we needed on the first attempt. The seamless process required no revisions, saving us valuable time and resources.",
       author: "H3nky",
       role: "Technology Partner",
-      avatar: "https://kun.vaysed.tech/fbla1p84.png",
+      avatar: "https://kun.screenshot.host/fbla1p84.png",
     },
     {
       quote:
         "Vaysed exceeded our expectations by delivering a complex specification that others would charge extra for. They provided valuable insights and included a comprehensive step-by-step guide, making the entire process smooth and transparent.",
       author: "Ivanov902",
       role: "Software Development Team",
-      avatar: "https://kun.vaysed.tech/0utgv3by.png",
+      avatar: "https://kun.screenshot.host/0utgv3by.png",
     },
   ],
 };

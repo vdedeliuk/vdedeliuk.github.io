@@ -108,7 +108,7 @@ export const uk = {
         title: "PAYBACK CARTEL | Telegram Membership & CRM Automator",
         description:
           "Повністю автоматизована система для продажу онлайн-курсів та управління платним доступом до закритих Telegram-каналів. Бот реєструє користувачів, приймає оплату в криптовалюті через NOWPayments, автоматично видає індивідуальні посилання для вступу, відстежує термін дії підписки та керує доступом (включаючи гнучку систему нагадувань, grace period та автоматичний кік неактивних учасників). Усі дані синхронізуються з CRM на базі Airtable в реальному часі.",
-        image: "https://kun.vaysed.tech/vojecyqr.png",
+        image: "https://kun.screenshot.host/vojecyqr.png",
         technologies: ["Node.js", "Telegram API", "NOWPayments", "Airtable", "Crypto"],
         featured: true,
       },
@@ -116,7 +116,7 @@ export const uk = {
         id: -2,
         title: "WorkersTon | Пасивний майнинг",
         description: "Купуй віртуальних воркерів за TON, отримуй пасивний щоденний дохід і виводь зароблене - мобільна Telegram Mini App з TON‑гаманцями, реферальною системою та кіберпанк UI.",
-        image: "https://kun.vaysed.tech/ye1l6how.jpg",
+        image: "https://kun.screenshot.host/ye1l6how.jpg",
         technologies: ["Node.js", "Telegram API", "Telegram Mini App", "TON", "Web3"],
         liveUrl: "https://t.me/WorkersTon_Bot",
         featured: true,
@@ -126,7 +126,7 @@ export const uk = {
         title: "RESTART 2026 | Telegram LMS Бот",
         description:
           "Цей проєкт являє собою повністю автоматизовану навчальну екосистему на базі Telegram-бота. Система виступає повноцінною заміною адміністраторам та навчальним порталам: вона самостійно проводить користувача через усі етапи навчання, від видачі інтерактивних уроків та перевірки домашніх завдань до обробки оплат і нагадувань. Рішення дозволяє школі ефективно масштабуватися та утримувати студентів завдяки зручному мобільному формату навчання.",
-        image: "https://kun.vaysed.tech/abi66gbs.png",
+        image: "https://kun.screenshot.host/abi66gbs.png",
         technologies: ["Node.js", "Telegram API", "MongoDB", "Monobank"],
         liveUrl: "https://t.me/yurieeva_bot",
       },
@@ -135,7 +135,7 @@ export const uk = {
         title: "Vaysed Shop",
         description:
           "Повнофункціональний веб-додаток електронної комерції, побудований на Python та Django, з каталогами товарів, функціональністю кошика, інтеграцією платежів Monobank та готовністю до розгортання Docker. Керує товарами, замовленнями та клієнтами через Django Admin.",
-        image: "https://kun.vaysed.tech/u614anq1.png",
+        image: "https://kun.screenshot.host/u614anq1.png",
         technologies: ["Python", "Django", "Monobank", "Docker"],
         liveUrl: "https://github.com/kun3741/vaysedshop",
       },
@@ -143,7 +143,7 @@ export const uk = {
         id: 2,
         title: "Lumos | Бот моніторингу відключень світла",
         description: "Lumos — це Telegram-бот, який автоматично відстежує графіки планових відключень електроенергії від українських провайдерів (зокрема для Івано-Франківської та Львівської областей). Бот дозволяє знайти свою чергу за адресою, підписатися на неї та отримувати миттєві сповіщення про зміну графіків. Також реалізована система розумних нагадувань перед вимкненням та увімкненням світла.",
-        image: "https://kun.vaysed.tech/mzofggk7.png",
+        image: "https://kun.screenshot.host/mzofggk7.png",
         technologies: ["Python", "MongoDB", "aiohttp"],
         liveUrl: "https://lumos.foo/",
       },
@@ -152,7 +152,7 @@ export const uk = {
         title: "Telegram Бот для Замовлення Піци",
         description:
           "Telegram бот на Node.js для онлайн-замовлення піци, з SQLite для управління даними. Включає інтерактивний конструктор піци, кошик, процес оформлення замовлення та функцію зворотного дзвінка для підтримки клієнтів.",
-        image: "https://kun.vaysed.tech/kjbeqeiy.png",
+        image: "https://kun.screenshot.host/kjbeqeiy.png",
         technologies: ["Node.js", "Telegram Bot API", "SQLite"],
         liveUrl: "https://github.com/kun3741/vaysedpizza-tg",
       },
@@ -161,7 +161,7 @@ export const uk = {
         title: "Бот Підтримки Prudbay Clothes",
         description:
           "Telegram бот для автоматизації підтримки клієнтів та управління замовленнями для prudbaydelivery, з реєстрацією користувачів, системою тікетів, управлінням замовленнями, інтеграцією MongoDB та Airtable.",
-        image: "https://kun.vaysed.tech/q9cgsf7q.png",
+        image: "https://kun.screenshot.host/q9cgsf7q.png",
         technologies: ["Node.js", "MongoDB", "Airtable", "Telegram Bot API"],
         liveUrl: "https://t.me/prudbaysupport_bot",
       },
@@ -170,7 +170,7 @@ export const uk = {
         title: "Telegram Бот Nova Party",
         description:
           "Комплексне рішення для організаторів подій, яке дозволяє керувати продажем квитків безпосередньо в Telegram. Проєкт розроблено з нуля, включаючи бекенд, логіку інтеграції платіжної системи та адміністративні інструменти. Система дозволяє користувачам легко переглядати події, купувати квитки через Monobank та отримувати їх у вигляді QR-коду. Для адміністраторів реалізовано панель для створення подій, перегляду статистики доходів, трансляції оголошень та валідації квитків через веб-додаток, інтегрований з Telegram.",
-        image: "https://vaysed.tech/ao4ll2ho.png",
+        image: "https://kun.screenshot.host/ao4ll2ho.png",
         technologies: ["Node.js", "Monobank", "Telegram Bot API", "Web App"],
         liveUrl: "https://t.me/novaparty_bot",
       },
@@ -186,21 +186,21 @@ export const uk = {
           "Vaysed доставив повнофункціональний веб-додаток у рекордний час. Їхня технічна експертиза та увага до деталей призвели до швидкого, чистого та високоякісного рішення. Ми високо рекомендуємо їхні послуги.",
         author: "Hippa",
         role: "Компанія Цифрових Рішень",
-        avatar: "https://kun.vaysed.tech/3yy5ewa7.png",
+        avatar: "https://kun.screenshot.host/3yy5ewa7.png",
       },
       {
         quote:
           "Vaysed продемонстрували виняткову експертизу та доставили саме те, що нам потрібно було, з першої спроби. Бездоганний процес не потребував переробок, що заощадило нам цінний час та ресурси.",
         author: "H3nky",
         role: "Технологічний Партнер",
-        avatar: "https://kun.vaysed.tech/fbla1p84.png",
+        avatar: "https://kun.screenshot.host/fbla1p84.png",
       },
       {
         quote:
           "Vaysed перевершили наші очікування, доставивши складну специфікацію, за яку інші б стягнули додаткову плату. Вони надали цінні інсайти та включили комплексний покроковий посібник, зробивши весь процес гладким та прозорим.",
         author: "Ivanov902",
         role: "Команда Розробки ПЗ",
-        avatar: "https://kun.vaysed.tech/0utgv3by.png",
+        avatar: "https://kun.screenshot.host/0utgv3by.png",
       },
     ],
   },
@@ -225,7 +225,7 @@ export const uk = {
     copyright: (year: number) => `© ${year} Vaysed. Всі права захищені.`,
     tagline: "Створено з точністю. Доставлено з турботою.",
     offerAgreement: "Договір оферти",
-    offerAgreementUrl: "https://kun.vaysed.tech/ofruceef.pdf",
+    offerAgreementUrl: "https://kun.screenshot.host/ofruceef.pdf",
   },
   stats: {
     botsDelivered: "Ботів Доставлено",
