@@ -21,7 +21,7 @@ const ParticlePlanet = () => {
         Збільшили кількість сегментів (128, 128), 
         щоб точок було багато і сфера виглядала густою 
       */}
-      <sphereGeometry args={[1, 128, 128]} />
+      <sphereGeometry args={[1, 72, 72]} />
       
       {/* Налаштування вигляду точок */}
       <pointsMaterial 
@@ -54,7 +54,7 @@ const PlanetScene = ({ className = '', style }: PlanetSceneProps) => {
     >
       <Canvas camera={{ position: [0, 0, 5.5] }} dpr={[1, 1.5]}>
         {/* Зірки на фоні (готовий компонент з drei) */}
-        <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+        <Stars radius={100} depth={50} count={2500} factor={4} saturation={0} fade speed={0.7} />
         
         {/* Планета з частинками */}
         <ParticlePlanet />

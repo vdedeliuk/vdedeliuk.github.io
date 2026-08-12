@@ -30,7 +30,7 @@ export function Portfolio() {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-6">
           {t.portfolio.projects.map((project, index) => {
-            const isFeatured = (project as any).featured;
+            const isFeatured = "featured" in project && project.featured === true;
             
             if (isFeatured) {
               return (
@@ -45,6 +45,10 @@ export function Portfolio() {
                         <img
                           src={project.image}
                           alt={project.title}
+                          width={1200}
+                          height={675}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             (e.target as HTMLImageElement).style.display = "none";
@@ -65,7 +69,7 @@ export function Portfolio() {
                         variant="outline" 
                         className="w-fit mb-4 border-foreground text-foreground text-xs"
                       >
-                        {(t.portfolio as any).featuredLabel || 'Featured'}
+                        {t.portfolio.featuredLabel}
                       </Badge>
                       <h3 className="text-2xl md:text-3xl font-heading mb-4 uppercase">
                         {project.title}
@@ -120,6 +124,10 @@ export function Portfolio() {
                     <img
                       src={project.image}
                       alt={project.title}
+                      width={1200}
+                      height={675}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         (e.target as HTMLImageElement).style.display = "none";

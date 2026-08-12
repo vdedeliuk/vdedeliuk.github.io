@@ -1,7 +1,40 @@
+import { lazy, Suspense, useEffect, useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/hooks/useTranslation";
-import PlanetScene from "@/components/PlanetScene";
+
+const PlanetScene = lazy(() => import("@/components/PlanetScene"));
+
+function HeroVisual() {
+  const [showEnhancedVisual, setShowEnhancedVisual] = useState(false);
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateVisual = () => setShowEnhancedVisual(desktop.matches && !reducedMotion.matches);
+
+    updateVisual();
+    desktop.addEventListener("change", updateVisual);
+    reducedMotion.addEventListener("change", updateVisual);
+
+    return () => {
+      desktop.removeEventListener("change", updateVisual);
+      reducedMotion.removeEventListener("change", updateVisual);
+    };
+  }, []);
+
+  return (
+    <div className="absolute inset-0 z-0 opacity-25 sm:opacity-40 pointer-events-none scale-[0.82] translate-y-[12%] sm:scale-100 sm:translate-y-0 origin-center" aria-hidden="true">
+      {showEnhancedVisual ? (
+        <Suspense fallback={<div className="hero-static-planet" />}>
+          <PlanetScene />
+        </Suspense>
+      ) : (
+        <div className="hero-static-planet" />
+      )}
+    </div>
+  );
+}
 
 export function Hero() {
   const t = useTranslation();
@@ -10,9 +43,7 @@ export function Hero() {
   return (
     <section className="relative min-h-[100svh] flex items-start sm:items-center justify-center overflow-hidden noise-bg">
       {/* 3D Planet Background */}
-      <div className="absolute inset-0 z-0 opacity-25 sm:opacity-40 pointer-events-none scale-[0.82] translate-y-[12%] sm:scale-100 sm:translate-y-0 origin-center">
-        <PlanetScene />
-      </div>
+      <HeroVisual />
 
       {/* Geometric lines */}
       <div className="absolute inset-0 overflow-hidden z-[1]">
@@ -73,16 +104,30 @@ export function Hero() {
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-3 sm:flex sm:flex-wrap sm:gap-12 md:gap-20 mt-14 sm:mt-20 lg:mt-24 pt-8 sm:pt-10 lg:pt-12 border-t border-foreground/20 opacity-0 animate-fade-up stagger-4">
+            <a
+              href="https://freelancehunt.com/en/freelancer/bot_kun.html#portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+              aria-label="Verify Vaysed portfolio on Freelancehunt"
+            >
+              <div className="text-4xl sm:text-5xl md:text-6xl font-heading">
+                13<span className="font-body text-[0.65em] align-top">+</span>
+              </div>
+              <div className="text-[10px] sm:text-sm leading-tight text-muted-foreground group-hover:text-foreground mt-2 tracking-wider uppercase transition-colors">{t.stats.botsDelivered} ↗</div>
+            </a>
+            <a
+              href="https://freelancehunt.com/en/freelancer/bot_kun.html#reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+              aria-label="Verify Vaysed client reviews on Freelancehunt"
+            >
+              <div className="text-4xl sm:text-5xl md:text-6xl font-heading">5</div>
+              <div className="text-[10px] sm:text-sm leading-tight text-muted-foreground group-hover:text-foreground mt-2 tracking-wider uppercase transition-colors">{t.stats.yearsExperience} ↗</div>
+            </a>
             <div>
-              <div className="text-4xl sm:text-5xl md:text-6xl font-heading">50+</div>
-              <div className="text-[10px] sm:text-sm leading-tight text-muted-foreground mt-2 tracking-wider uppercase">{t.stats.botsDelivered}</div>
-            </div>
-            <div>
-              <div className="text-4xl sm:text-5xl md:text-6xl font-heading">5+</div>
-              <div className="text-[10px] sm:text-sm leading-tight text-muted-foreground mt-2 tracking-wider uppercase">{t.stats.yearsExperience}</div>
-            </div>
-            <div>
-              <div className="text-4xl sm:text-5xl md:text-6xl font-heading">100%</div>
+              <div className="text-4xl sm:text-5xl md:text-6xl font-heading">3</div>
               <div className="text-[10px] sm:text-sm leading-tight text-muted-foreground mt-2 tracking-wider uppercase">{t.stats.satisfaction}</div>
             </div>
           </div>

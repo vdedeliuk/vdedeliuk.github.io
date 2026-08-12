@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Vaysed — Telegram Bot Development Agency</title>
+  <title id="title">Vaysed — Telegram Sales &amp; Automation Systems</title>
   <desc id="desc">Black and white Vaysed social card with a geometric Telegram automation motif.</desc>
   <defs>
     <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse">
@@ -29,10 +29,10 @@
   <path d="M72 184h82" stroke="#fff" stroke-width="3"/>
   <text x="178" y="193" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="7">TELEGRAM BOT AGENCY</text>
 
-  <text x="72" y="304" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="900" letter-spacing="-4">WE BUILD</text>
-  <text x="72" y="392" fill="none" stroke="#fff" stroke-width="2" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="900" letter-spacing="-4">POWERFUL BOTS</text>
+  <text x="72" y="304" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="900" letter-spacing="-4">AUTOMATE SALES</text>
+  <text x="72" y="392" fill="none" stroke="#fff" stroke-width="2" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="900" letter-spacing="-4">IN TELEGRAM</text>
 
-  <text x="76" y="476" fill="#b8b8b8" font-family="Arial, Helvetica, sans-serif" font-size="23">Custom bots · Payments · Mini Apps · API integrations</text>
+  <text x="76" y="476" fill="#b8b8b8" font-family="Arial, Helvetica, sans-serif" font-size="23">Payments → CRM → access → reminders → analytics</text>
 
   <line x1="72" y1="538" x2="1128" y2="538" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
   <text x="72" y="585" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="2">VAYSED.DEV</text>

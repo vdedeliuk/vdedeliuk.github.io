@@ -45,19 +45,21 @@ export function Testimonials() {
               {/* Author */}
               <div className="flex items-center gap-4">
                 {testimonial.avatar ? (
-                  <div className="w-14 h-14 border-2 border-background group-hover:border-foreground overflow-hidden transition-colors">
+                  <div className="relative w-14 h-14 border-2 border-background group-hover:border-foreground overflow-hidden transition-colors">
+                    <span className="absolute inset-0 text-2xl font-heading flex items-center justify-center" aria-hidden="true">
+                      {testimonial.author.charAt(0)}
+                    </span>
                     <img
                       src={testimonial.avatar}
                       alt={testimonial.author}
-                      className="w-full h-full object-cover"
+                      width={112}
+                      height={112}
+                      loading="lazy"
+                      decoding="async"
+                      className="relative w-full h-full object-cover"
                       onError={(e) => {
-                        // Fallback to initial if image fails
                         const target = e.target as HTMLImageElement;
                         target.style.display = "none";
-                        const parent = target.parentElement;
-                        if (parent) {
-                          parent.innerHTML = `<span class="text-2xl font-heading flex items-center justify-center w-full h-full">${testimonial.author.charAt(0)}</span>`;
-                        }
                       }}
                     />
                   </div>
