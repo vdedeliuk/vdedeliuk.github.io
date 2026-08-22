@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { useState } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -17,54 +18,59 @@ interface PortfolioImageProps {
 }
 
 function PortfolioImage({ src, alt, eager = false, sizes }: PortfolioImageProps) {
+  const [fallbackToBase, setFallbackToBase] = useState(false);
+  const [imageFailed, setImageFailed] = useState(false);
+
   return (
     <>
-      <div
-        aria-hidden="true"
-        className="absolute -inset-2 scale-105 bg-cover bg-center blur-md"
-        style={{ backgroundImage: `url(${imageVariant(src, "placeholder")})` }}
-      />
-      <picture aria-hidden="true" className="absolute inset-0">
-        <source
-          type="image/avif"
-          srcSet={imageVariant(src, "480", "avif")}
+      {!imageFailed && (
+        <div
+          aria-hidden="true"
+          className="absolute -inset-2 scale-105 bg-cover bg-center blur-md"
+          style={{ backgroundImage: `url(${imageVariant(src, "placeholder")})` }}
         />
-        <img
-          src={imageVariant(src, "480")}
-          alt=""
-          width={480}
-          height={270}
-          loading="eager"
-          fetchPriority="low"
-          decoding="async"
-          className="h-full w-full object-cover"
-        />
-      </picture>
-      <picture className="absolute inset-0">
-        <source
-          type="image/avif"
-          srcSet={`${imageVariant(src, "480", "avif")} 480w, ${imageVariant(src, "800", "avif")} 800w, ${imageVariant(src, "1200", "avif")} 1200w`}
-          sizes={sizes}
-        />
-        <source
-          type="image/webp"
-          srcSet={`${imageVariant(src, "480")} 480w, ${imageVariant(src, "800")} 800w, ${src} 1200w`}
-          sizes={sizes}
-        />
-        <img
-          src={src}
-          alt={alt}
-          width={1200}
-          height={675}
-          loading={eager ? "eager" : "lazy"}
-          fetchPriority={eager ? "low" : "auto"}
-          decoding="async"
-          className="h-full w-full object-cover"
-          onError={(event) => {
-            (event.currentTarget as HTMLImageElement).style.display = "none";
-          }}
-        />
-      </picture>
+      )}
+      {imageFailed ? (
+        <div className="absolute inset-0 flex items-center justify-center bg-secondary p-8 text-center">
+          <span className="max-w-md font-heading text-2xl uppercase text-foreground/45">
+            {alt}
+          </span>
+        </div>
+      ) : (
+        <picture className="absolute inset-0">
+          {!fallbackToBase && (
+            <>
+              <source
+                type="image/avif"
+                srcSet={`${imageVariant(src, "480", "avif")} 480w, ${imageVariant(src, "800", "avif")} 800w, ${imageVariant(src, "1200", "avif")} 1200w`}
+                sizes={sizes}
+              />
+              <source
+                type="image/webp"
+                srcSet={`${imageVariant(src, "480")} 480w, ${imageVariant(src, "800")} 800w, ${src} 1200w`}
+                sizes={sizes}
+              />
+            </>
+          )}
+          <img
+            src={src}
+            alt={alt}
+            width={1200}
+            height={675}
+            loading={eager ? "eager" : "lazy"}
+            fetchPriority={eager ? "low" : "auto"}
+            decoding="async"
+            className="h-full w-full object-cover"
+            onError={() => {
+              if (fallbackToBase) {
+                setImageFailed(true);
+              } else {
+                setFallbackToBase(true);
+              }
+            }}
+          />
+        </picture>
+      )}
     </>
   );
 }

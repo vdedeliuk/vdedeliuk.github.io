@@ -1,37 +1,11 @@
-import { lazy, Suspense, useEffect, useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/hooks/useTranslation";
 
-const PlanetScene = lazy(() => import("@/components/PlanetScene"));
-
 function HeroVisual() {
-  const [showEnhancedVisual, setShowEnhancedVisual] = useState(false);
-
-  useEffect(() => {
-    const desktop = window.matchMedia("(min-width: 768px)");
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const updateVisual = () => setShowEnhancedVisual(desktop.matches && !reducedMotion.matches);
-
-    updateVisual();
-    desktop.addEventListener("change", updateVisual);
-    reducedMotion.addEventListener("change", updateVisual);
-
-    return () => {
-      desktop.removeEventListener("change", updateVisual);
-      reducedMotion.removeEventListener("change", updateVisual);
-    };
-  }, []);
-
   return (
     <div className="absolute inset-0 z-0 opacity-25 sm:opacity-40 pointer-events-none scale-[0.82] translate-y-[12%] sm:scale-100 sm:translate-y-0 origin-center" aria-hidden="true">
-      {showEnhancedVisual ? (
-        <Suspense fallback={<div className="hero-static-planet" />}>
-          <PlanetScene />
-        </Suspense>
-      ) : (
-        <div className="hero-static-planet" />
-      )}
+      <div className="hero-static-planet" />
     </div>
   );
 }
@@ -42,7 +16,7 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[100svh] flex items-start sm:items-center justify-center overflow-hidden noise-bg">
-      {/* 3D Planet Background */}
+      {/* GPU-independent hero visual */}
       <HeroVisual />
 
       {/* Geometric lines */}
