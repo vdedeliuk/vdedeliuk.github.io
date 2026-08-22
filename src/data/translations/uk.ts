@@ -104,22 +104,23 @@ export const uk = {
     featuredLabel: "Рекомендовано",
     projects: [
       {
-        id: -1,
-        title: "PAYBACK CARTEL | Telegram Membership & CRM Automator",
+        id: -3,
+        title: "ARENA 27 | Booking API & Telegram CRM",
         description:
-          "Повністю автоматизована система для продажу онлайн-курсів та управління платним доступом до закритих Telegram-каналів. Бот реєструє користувачів, приймає оплату в криптовалюті через NOWPayments, автоматично видає індивідуальні посилання для вступу, відстежує термін дії підписки та керує доступом (включаючи гнучку систему нагадувань, grace period та автоматичний кік неактивних учасників). Усі дані синхронізуються з CRM на базі Airtable в реальному часі.",
-        image: "/images/portfolio/payback-cartel.webp",
-        technologies: ["Node.js", "Telegram API", "NOWPayments", "Airtable", "Crypto"],
+          "Production-система автоматизації бронювань для комп’ютерного клубу ARENA 27. Express API приймає заявки з a27.com.ua, валідує та зберігає їх у MongoDB, а Telegram userbot миттєво сповіщає адміністраторів і клієнтів. Приватний адмін-бот дає статистику, пошук клієнтів, перегляд бронювань і сегментовані розсилки з попереднім переглядом та підтвердженням.",
+        image: "/images/portfolio/arena-27.webp",
+        technologies: ["Node.js", "Express API", "Telegram API", "MongoDB", "OpenAPI"],
+        liveUrl: "https://a27.com.ua/",
         featured: true,
       },
       {
-        id: -2,
-        title: "WorkersTon | Пасивний майнинг",
-        description: "Купуй віртуальних воркерів за TON, отримуй пасивний щоденний дохід і виводь зароблене - мобільна Telegram Mini App з TON‑гаманцями, реферальною системою та кіберпанк UI.",
-        image: "/images/portfolio/workerston.webp",
-        technologies: ["Node.js", "Telegram API", "Telegram Mini App", "TON", "Web3"],
-        liveUrl: "https://t.me/WorkersTon_Bot",
-        featured: true,
+        id: -4,
+        title: "ApocalypseTON | Telegram Survival Mini App",
+        description:
+          "Повноцінна survival-гра всередині Telegram: бази з пасивним видобутком ресурсів, експедиції, квести, контейнери, лотерея та реферальна система. Mini App інтегрована з TON Connect для депозитів і виведень, а Node.js backend керує ігровою економікою, on-chain платежами та автоматичними Telegram-нагадуваннями.",
+        image: "/images/portfolio/apocalypse-ton.webp",
+        technologies: ["React", "Node.js", "Telegram Mini App", "TON Connect", "Prisma"],
+        liveUrl: "https://t.me/apocalypse_ton",
       },
       {
         id: 0,
@@ -173,6 +174,22 @@ export const uk = {
         image: "/images/portfolio/nova-party.webp",
         technologies: ["Node.js", "Monobank", "Telegram Bot API", "Web App"],
         liveUrl: "https://t.me/novaparty_bot",
+      },
+      {
+        id: -1,
+        title: "PAYBACK CARTEL | Telegram Membership & CRM Automator",
+        description:
+          "Повністю автоматизована система для продажу онлайн-курсів та управління платним доступом до закритих Telegram-каналів. Бот реєструє користувачів, приймає оплату в криптовалюті через NOWPayments, автоматично видає індивідуальні посилання для вступу, відстежує термін дії підписки та керує доступом (включаючи гнучку систему нагадувань, grace period та автоматичний кік неактивних учасників). Усі дані синхронізуються з CRM на базі Airtable в реальному часі.",
+        image: "/images/portfolio/payback-cartel.webp",
+        technologies: ["Node.js", "Telegram API", "NOWPayments", "Airtable", "Crypto"],
+      },
+      {
+        id: -2,
+        title: "WorkersTon | Пасивний майнинг",
+        description: "Купуй віртуальних воркерів за TON, отримуй пасивний щоденний дохід і виводь зароблене - мобільна Telegram Mini App з TON‑гаманцями, реферальною системою та кіберпанк UI.",
+        image: "/images/portfolio/workerston.webp",
+        technologies: ["Node.js", "Telegram API", "Telegram Mini App", "TON", "Web3"],
+        liveUrl: "https://t.me/WorkersTon_Bot",
       },
     ],
     viewProject: "Переглянути Проєкт",

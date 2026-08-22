@@ -99,22 +99,23 @@ export const portfolioContent = {
   subtitle: "Projects We've Built",
   projects: [
     {
-      id: -1,
-      title: "PAYBACK CARTEL | Telegram Membership & CRM Automator",
+      id: -3,
+      title: "ARENA 27 | Booking API & Telegram CRM",
       description:
-        "PAYBACK CARTEL is a fully automated system for selling online courses and managing premium access to private Telegram channels. The bot registers users, accepts cryptocurrency payments via NOWPayments, automatically generates individual invite links, monitors subscription periods, and manages access control (including a dynamic notification system, a 5-day grace period, and automated removal of expired accounts). All client data is synchronized with an Airtable CRM in real-time.",
-      image: "/images/portfolio/payback-cartel.webp",
-      technologies: ["Node.js", "Telegram API", "NOWPayments", "Airtable", "Crypto"],
+        "A production booking automation system for the ARENA 27 gaming club. An Express API receives requests from a27.com.ua, validates them and stores them in MongoDB, while a Telegram userbot instantly notifies administrators and customers. A private admin bot provides statistics, customer search, booking views and segmented broadcasts with audience preview and confirmation.",
+      image: "/images/portfolio/arena-27.webp",
+      technologies: ["Node.js", "Express API", "Telegram API", "MongoDB", "OpenAPI"],
+      liveUrl: "https://a27.com.ua/",
       featured: true,
     },
     {
-      id: -2,
-      title: "WorkersTon | Passive Mining",
-      description: "Buy virtual workers with TON, earn passive daily rewards for 60‑day contracts, and withdraw - mobile-first Telegram Mini App with TON wallet integration and 10% referral rewards.",
-      image: "/images/portfolio/workerston.webp",
-      technologies: ["Node.js", "Telegram API", "Telegram Mini App", "TON", "Web3"],
-      liveUrl: "https://t.me/WorkersTon_Bot",
-      featured: true,
+      id: -4,
+      title: "ApocalypseTON | Telegram Survival Mini App",
+      description:
+        "A full-featured survival game inside Telegram with passive-resource bases, expeditions, quests, loot containers, a lottery and referrals. The Mini App integrates TON Connect for deposits and withdrawals, while its Node.js backend manages the game economy, on-chain payments and automated Telegram reminders.",
+      image: "/images/portfolio/apocalypse-ton.webp",
+      technologies: ["React", "Node.js", "Telegram Mini App", "TON Connect", "Prisma"],
+      liveUrl: "https://t.me/apocalypse_ton",
     },
     {
       id: 0,
@@ -124,7 +125,6 @@ export const portfolioContent = {
       image: "/images/portfolio/restart-2026.webp",
       technologies: ["Node.js", "Telegram API", "MongoDB", "Monobank"],
       liveUrl: "https://t.me/yurieeva_bot",
-      featured: true,
     },
     {
       id: 1,
@@ -134,7 +134,6 @@ export const portfolioContent = {
       image: "/images/portfolio/vaysed-shop.webp",
       technologies: ["Python", "Django", "Monobank", "Docker"],
       liveUrl: "https://github.com/kun3741/vaysedshop",
-      featured: true,
     },
     {
       id: 2,
@@ -170,6 +169,22 @@ export const portfolioContent = {
       image: "/images/portfolio/nova-party.webp",
       technologies: ["Node.js", "Monobank", "Telegram Bot API", "Web App"],
       liveUrl: "https://t.me/novaparty_bot",
+    },
+    {
+      id: -1,
+      title: "PAYBACK CARTEL | Telegram Membership & CRM Automator",
+      description:
+        "PAYBACK CARTEL is a fully automated system for selling online courses and managing premium access to private Telegram channels. The bot registers users, accepts cryptocurrency payments via NOWPayments, automatically generates individual invite links, monitors subscription periods, and manages access control (including a dynamic notification system, a 5-day grace period, and automated removal of expired accounts). All client data is synchronized with an Airtable CRM in real-time.",
+      image: "/images/portfolio/payback-cartel.webp",
+      technologies: ["Node.js", "Telegram API", "NOWPayments", "Airtable", "Crypto"],
+    },
+    {
+      id: -2,
+      title: "WorkersTon | Passive Mining",
+      description: "Buy virtual workers with TON, earn passive daily rewards for 60‑day contracts, and withdraw - mobile-first Telegram Mini App with TON wallet integration and 10% referral rewards.",
+      image: "/images/portfolio/workerston.webp",
+      technologies: ["Node.js", "Telegram API", "Telegram Mini App", "TON", "Web3"],
+      liveUrl: "https://t.me/WorkersTon_Bot",
     },
     ],
 };

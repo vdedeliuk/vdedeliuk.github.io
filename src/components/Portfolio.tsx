@@ -3,6 +3,72 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+const imageVariant = (
+  src: string,
+  size: "480" | "800" | "1200" | "placeholder",
+  extension: "webp" | "avif" = "webp",
+) => src.replace(/\.webp$/, `-${size}.${extension}`);
+
+interface PortfolioImageProps {
+  src: string;
+  alt: string;
+  eager?: boolean;
+  sizes: string;
+}
+
+function PortfolioImage({ src, alt, eager = false, sizes }: PortfolioImageProps) {
+  return (
+    <>
+      <div
+        aria-hidden="true"
+        className="absolute -inset-2 scale-105 bg-cover bg-center blur-md"
+        style={{ backgroundImage: `url(${imageVariant(src, "placeholder")})` }}
+      />
+      <picture aria-hidden="true" className="absolute inset-0">
+        <source
+          type="image/avif"
+          srcSet={imageVariant(src, "480", "avif")}
+        />
+        <img
+          src={imageVariant(src, "480")}
+          alt=""
+          width={480}
+          height={270}
+          loading="eager"
+          fetchPriority="low"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+      </picture>
+      <picture className="absolute inset-0">
+        <source
+          type="image/avif"
+          srcSet={`${imageVariant(src, "480", "avif")} 480w, ${imageVariant(src, "800", "avif")} 800w, ${imageVariant(src, "1200", "avif")} 1200w`}
+          sizes={sizes}
+        />
+        <source
+          type="image/webp"
+          srcSet={`${imageVariant(src, "480")} 480w, ${imageVariant(src, "800")} 800w, ${src} 1200w`}
+          sizes={sizes}
+        />
+        <img
+          src={src}
+          alt={alt}
+          width={1200}
+          height={675}
+          loading={eager ? "eager" : "lazy"}
+          fetchPriority={eager ? "low" : "auto"}
+          decoding="async"
+          className="h-full w-full object-cover"
+          onError={(event) => {
+            (event.currentTarget as HTMLImageElement).style.display = "none";
+          }}
+        />
+      </picture>
+    </>
+  );
+}
+
 export function Portfolio() {
   const t = useTranslation();
   
@@ -42,17 +108,11 @@ export function Portfolio() {
                     {/* Image Area - Left Side */}
                     <div className="relative bg-secondary overflow-hidden md:w-1/2 h-72 md:h-auto md:min-h-[400px]">
                       {project.image ? (
-                        <img
+                        <PortfolioImage
                           src={project.image}
                           alt={project.title}
-                          width={1200}
-                          height={675}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = "none";
-                          }}
+                          eager={index < 2}
+                          sizes="(min-width: 1280px) 640px, (min-width: 768px) 50vw, 100vw"
                         />
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center">
@@ -121,17 +181,10 @@ export function Portfolio() {
                 {/* Image Area */}
                 <div className="relative h-56 bg-secondary overflow-hidden">
                   {project.image ? (
-                    <img
+                    <PortfolioImage
                       src={project.image}
                       alt={project.title}
-                      width={1200}
-                      height={675}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = "none";
-                      }}
+                      sizes="(min-width: 1280px) 616px, (min-width: 768px) 50vw, 100vw"
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
